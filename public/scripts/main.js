@@ -1,3 +1,10 @@
+master
+"use strict";
+
+var ohHey = "Hello World";
+
+console.log(ohHey);
+
 'use strict';
 
 var ohHey = "Hello World";
@@ -12,3 +19,4 @@ $.ajax({
 }).then(function (res) {
 	console.log(res);
 });
+master
