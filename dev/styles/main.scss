@@ -1,3 +1,5 @@
-body{
-	background: red;
-}
+@import 'partials/normalize';
+@import 'partials/mixins';
+@import 'partials/global';
+@import 'partials/landing';
+@import 'partials/main';
