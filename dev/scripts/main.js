@@ -1,11 +1,9 @@
-const ohHey = "Hello World";
+const app = {};
 
-console.log('Hi Michelle')
-
-const url = 'https://opentdb.com/api.php?amount=10&type=multiple'
+app.url = 'https://opentdb.com/api.php?amount=10&type=multiple'
 
 $.ajax({
-	url: url,
+	url: app.url,
 	method: 'GET'
 }).then(function(res){
 	console.log(res)

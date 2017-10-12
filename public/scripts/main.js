@@ -1,13 +1,11 @@
 'use strict';
 
-var ohHey = "Hello World";
+var app = {};
 
-console.log('Hi Michelle');
-
-var url = 'https://opentdb.com/api.php?amount=10&type=multiple';
+app.url = 'https://opentdb.com/api.php?amount=10&type=multiple';
 
 $.ajax({
-	url: url,
+	url: app.url,
 	method: 'GET'
 }).then(function (res) {
 	console.log(res);
