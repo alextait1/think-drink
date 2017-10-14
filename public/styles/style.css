@@ -184,3 +184,9 @@ h1 {
 h2 {
   font-weight: 200;
   font-size: 30px; }
+
+.rules {
+  height: 100vh; }
+
+.main label {
+  text-transform: uppercase; }

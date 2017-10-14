@@ -3,7 +3,6 @@
 var app = {};
 app.url = 'https://opentdb.com/api.php?amount=10&type=multiple';
 app.users = [];
-
 /* 
 Rules Page:
 1. Have user enter number of players
@@ -29,48 +28,45 @@ Player Page:
 Results Page:
 1. Display player names and how many drinks each player consumed in drink icons
 2. Button to start again
-
-
 */
 
 // Rules Page:
 // 1. Have user enter number of players
-
 // on change add class of selected
-
-
 // 2. Dynamically generate name input fields for that many players
 // 3. Have user enter the names and push these into an array of names 
 // 4. Have the user select the difficulty level
 // 5. Have the user select how many rounds they want to play, number of q's (array.length) = number of players * number of rounds
 // 6. Have a play game button that links to the player 0 page
 
-// app.nameMaker = function(){
-// 	$('.player__name').change(){
-// 		let playerName= $('.player__name').val();
-// 		console.log(playerName);
-// 	}
-// }
-
 app.nameMaker = function () {
 	$("input[type='text']").change(function () {
 		var playerName = $('.player__name').val();
-
 		var playerNameSubmit = function playerNameSubmit() {
-			app.users.push(playerName);
-			console.log(app.users);
 			$("input[type='text']").val("");
+			// on click of either button, check to see if the play name value already exists in the app.users array
+			// if it does, alert 'you must choose a unique player name'
+			// if not, add to array
+			// function checkArray (playerName, index) {
+			if (app.users.indexOf(playerName) === -1) {
+				app.users.push(playerName);
+				$('.player__name-display').append('<div>\n\t\t\t\t\t\t\t\t<p>Player ' + (app.users.indexOf(playerName) + 1) + ' is ' + playerName + '</p>\n\t\t\t\t\t\t\t</div>');
+				console.log(playerName + ' has been added');
+			} else if (app.users.indexOf(playerName) > -1) {
+				alert(playerName + ' already exists');
+			}
 		};
+		// only append after click of no more players button
+		// $('.player__name-none').on('click', stopNames());
 
-		var stopNames = function stopNames() {
-
-			$('.rules').append('<ol>\n\t\t\t\t\t\t<li>Answer Question</li>\n\t\t\t\t\t\t<li>Drink</li>\n\t\t\t\t\t\t<li>Assign Drink</li>\n\t\t\t\t\t\t<li>Next Player</li>\t\n\t\t\t\t\t</ol>');
-		};
-
-		$('.player__name-new').on('click' || 'keyup', playerNameSubmit());
-
-		$('.player__name-display').append('<div>\n\t\t\t\t\t\t<p>Player ' + (app.users.indexOf(playerName) + 1) + ' is ' + playerName + '</p>\n\t\t\t\t\t</div>');
-		$('.player__name-none').on('click' !== 'keyup', stopNames());
+		// on click or enter of addmore button, don't run stopNames function, only run playerNameSubmmit 
+		$('.player__name-new').on('click', playerNameSubmit());
+		$('body').keyup(function (event) {
+			if (event.keyCode == 13) {
+				$('.player__name-new').click();
+			}
+		});
+		// on click of done button, call stopNames
 	});
 };
 
