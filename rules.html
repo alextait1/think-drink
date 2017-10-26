@@ -8,40 +8,44 @@
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+	<main>
+		<div class="overlay">
+			<div class="wrapper">
+				<section class="rules">
+					<h1>Think Drink</h1>
+					<h2>Game rules</h2>
+					<ol>
+						<li>Answer Question</li>
+						<li>Drink</li>
+						<li>Assign Drink</li>
+						<li>Next Player</li>	
+					</ol>
+					<a href="#main"><button>Next</button></a>
+				</section>
+				<section class="setup">
+					<section id="main" class="main">
+						<label for="player__name">Enter Player Name</label>
+						<input type="text" name="player__name" placeholder="" class="player__name">
+						<button class="player__name-new">Enter Next Player</button>
+					</section>
+					<section class="player__name-display">
+						<!-- dynmaic content goes here -->
+					</section>
+					<select name="rounds" id="rounds">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</section>
 
-	<div class="wrapper">
-		<section class="rules">
-			<ol>
-				<li>Answer Question</li>
-				<li>Drink</li>
-				<li>Assign Drink</li>
-				<li>Next Player</li>	
-			</ol>
-			<a href="#main"><button>Next</button></a>
-		</section>
-		<main class="setup">
-			<section id="main" class="main">
-				<label for="player__name">Enter Player Name</label>
-				<input type="text" name="player__name" placeholder="" class="player__name">
-				<button class="player__name-new">Enter Next Player</button>
-			</section>
-			<section class="player__name-display">
-				<!-- dynmaic content goes here -->
-			</section>
-			<select name="rounds" id="rounds">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-		</main>
+				<a href="game.html"><button class="play__button">Play Game</button></a>
+			</div>
 
-		<a href="game.html"><button class="play__button">Play Game</button></a>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="public/scripts/main.js"></script>
-	
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+			<script src="public/scripts/main.js"></script>
+		</div>
+	</main>
 </body>
 </html>

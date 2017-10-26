@@ -1,7 +1,32 @@
-.rules {
+main {
+	background-image: url(../../assets/masonjars.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100vh;
+	position: relative;
+}
+
+.overlay {
+	position: absolute;
+	// top: 0;
+	// right: 0;
+	// left
+	height: 100%;
+	width: 100%;
+	background: rgba(113,151,91,.8);
+	// mix-blend-mode: multiply;
+}
+
+.rules {
+	// height: 100vh;
+	h1, h2 {
+		text-align: center;
+	}
+	// background: #71975b;
+
 }
 
 .main label {
 	text-transform: uppercase;	
 }
+

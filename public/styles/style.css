@@ -131,13 +131,25 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 .wrapper {
-  max-width: 1170px; }
+  max-width: 1170px;
+  margin: 0 auto; }
 
 body {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  color: white; }
 
 .flex {
   display: flex; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 130px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px; }
 
 .landing__video-container {
   z-index: -100;
@@ -177,19 +189,28 @@ body {
   letter-spacing: 1.2px;
   padding: 15px 55px; }
 
-h1 {
-  font-size: 130px;
-  text-transform: uppercase;
-  margin: 40px 0;
-  font-weight: 600;
-  letter-spacing: 1.5px; }
+h1.landing {
+  margin: 40px 0; }
 
 h2 {
   font-weight: 200;
   font-size: 30px; }
 
-.rules {
-  height: 100vh; }
+main {
+  background-image: url(../../assets/masonjars.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative; }
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(113, 151, 91, 0.8); }
+
+.rules h1, .rules h2 {
+  text-align: center; }
 
 .main label {
   text-transform: uppercase; }
