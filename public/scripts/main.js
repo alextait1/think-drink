@@ -37,7 +37,6 @@ Results Page:
 // 6. Have a play game button that links to the player 0 page
 
 
-app.category = $('#category').val();
 // Figure out how to get the dynamic value from the dropdown to code it into the URL
 
 app.nameMaker = function () {
@@ -64,21 +63,25 @@ app.nameMaker = function () {
 
 app.getData = function () {
     var players = [];
+
     $('form').submit(function (e) {
         e.preventDefault();
         players.push('placeholder');
         console.log(players);
         console.log('submitting');
+
         $.ajax({
             url: app.url,
             method: 'GET',
             data: {
                 amount: 1,
                 type: "multiple",
-                category: app.category,
-                difficulty: "easy"
+                category: $('#category').val(),
+                difficulty: $('#difficulty').val()
             }
         }).then(function (res) {
+            var resultsArray = [];
+
             var question = res.results[0].question;
             var answerOne = res.results[0].correct_answer;
             var answerTwo = res.results[0].incorrect_answers[0];
@@ -91,8 +94,35 @@ app.getData = function () {
             var answerOneContainer = $('<div>').addClass('answer answer__false-One').append(answerOne);
             var answerTwoContainer = $('<div>').addClass('answer answer__false-Two').append(answerTwo);
             var answerThreeContainer = $('<div>').addClass('answer answer__false-Three').append(answerThree);
+            resultsArray.push(answerOne, answerTwo, answerThree, answerFour);
+            console.log("MY ARRAY", resultsArray);
+
+            // numUsed = [];
+            // resultsRandom = [];
+            // addAnswer = false;
+
+            var randomArray = resultsArray.sort(function () {
+                return Math.round(Math.random()) - 0.5;
+            });
+            console.log('random', randomArray);
+
+            // for (let i = 0; i <= resultsArray.length; i++){
+            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
+            // }
+
+            // for (let i = 0; i <= resultsArray.length; i++){
+            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
+            //     console.log("word", randomNum)
+            // }
+
+            // let randomArray = function(){
+            //     let randomNum = Math.floor(Math.random() * 10);
+            //     console.log("word", randomNum)
+            // }
+            // console.log("lalala", randomArray)
+
             var answerFourContainer = $('<div>').addClass('answer answer__false-Four').append(answerFour);
-            var answersContainer = $('<div>').addClass('answersContainer flex').append(answerOneContainer, answerTwoContainer, answerThreeContainer, answerFour);
+            var answersContainer = $('<div>').addClass('answersContainer flex').append(randomArray);
             $('#questions').append(questionContainer, answersContainer);
         });
     });
