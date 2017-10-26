@@ -199,4 +199,5 @@ h2 {
 
 .player__question-container {
   background: red;
-  height: 100vh; }
+  height: 100vh;
+  display: flex; }
