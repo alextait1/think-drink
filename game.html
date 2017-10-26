@@ -2,13 +2,44 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Think Drink</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600" rel="stylesheet">
+	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+	<section class='player__selections wrapper'>
+		<form>
+			<h2>Select A Question Category</h2>
+			<select name="category" id="category" id='player__selections-category'>
+				<option value="9">General Knowledge</option>
+				<option value="11">Film</option>
+				<option value="12">Music</option>
+				<option value="26">Celebrities</option>
+				<option value="25">Art</option>
+				<option value="17">Science & Nature</option>
+				<option value="23">History</option>
+				<option value="22">Geography</option>
+				<option value="24">Politics</option>
+				<option value="20">Mythology</option>
+				<option value="21">Sports</option>
+			</select>
+			<h2>Select Difficulty Level</h2>
+			<select name="difficulty" id="difficulty" class="player__selections-difficulty">
+				<option value="easy">Easy</option>
+				<option value="medium">Medium</option>
+				<option value="hard">Hard</option>
+			</select>
+			<input type="submit" value="submit" placeholder="get question" id="question__button">
+		</form>
 
-	<div class="app">
-		<!-- dynamic content goes here -->
-	</div>
-	
+	</section>
+	<section class="player__question">
+		<div class="player__question-container" id="questions">
+			<!-- dynamic content goes here -->
+		</div>
+	</section>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="public/scripts/main.js"></script>	
 </body>
 </html>

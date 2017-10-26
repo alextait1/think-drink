@@ -19,19 +19,25 @@
 			</ol>
 			<a href="#main"><button>Next</button></a>
 		</section>
-		<main id="main" class="main">
-			<label for="player__name">Enter Player Name</label>
-			<input type="text" name="player__name" placeholder="" class="player__name">
-			<button class="player__name-new">Enter Next Player</button>
-			<a href="game.html"><button>Play Game</button></a>
+		<main class="setup">
+			<section id="main" class="main">
+				<label for="player__name">Enter Player Name</label>
+				<input type="text" name="player__name" placeholder="" class="player__name">
+				<button class="player__name-new">Enter Next Player</button>
+			</section>
+			<section class="player__name-display">
+				<!-- dynmaic content goes here -->
+			</section>
+			<select name="rounds" id="rounds">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
 		</main>
-		<section class="player__name-display">
-			<!-- dynmaic content goes here -->
-		</section>
 
-		<section class="rules">
-			<!-- append rules -->
-		</section>
+		<a href="game.html"><button class="play__button">Play Game</button></a>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
