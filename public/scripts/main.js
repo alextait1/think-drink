@@ -38,7 +38,6 @@ Results Page:
 
 
 // Figure out how to get the dynamic value from the dropdown to code it into the URL
-
 app.nameMaker = function () {
     $("input[type='text']").change(function () {
         var playerName = $('.player__name').val();
@@ -97,29 +96,10 @@ app.getData = function () {
             resultsArray.push(answerOne, answerTwo, answerThree, answerFour);
             console.log("MY ARRAY", resultsArray);
 
-            // numUsed = [];
-            // resultsRandom = [];
-            // addAnswer = false;
-
             var randomArray = resultsArray.sort(function () {
                 return Math.round(Math.random()) - 0.5;
             });
             console.log('random', randomArray);
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            // }
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            //     console.log("word", randomNum)
-            // }
-
-            // let randomArray = function(){
-            //     let randomNum = Math.floor(Math.random() * 10);
-            //     console.log("word", randomNum)
-            // }
-            // console.log("lalala", randomArray)
 
             var answerFourContainer = $('<div>').addClass('answer answer__false-Four').append(answerFour);
             var answersContainer = $('<div>').addClass('answersContainer flex').append(randomArray);

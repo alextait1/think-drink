@@ -37,7 +37,6 @@ Results Page:
 
 
 // Figure out how to get the dynamic value from the dropdown to code it into the URL
-
 app.nameMaker = function(){
     $("input[type='text']").change(function(){
         let playerName = $('.player__name').val();
@@ -61,8 +60,8 @@ app.nameMaker = function(){
                     $('.player__name-new').click();
                 } 
             })
-    }); 
-}
+        }); 
+    }
 
 
 
@@ -103,34 +102,12 @@ app.getData = function(){
             resultsArray.push(answerOne, answerTwo, answerThree, answerFour);
             console.log("MY ARRAY", resultsArray);
 
-            // numUsed = [];
-            // resultsRandom = [];
-            // addAnswer = false;
-
             let randomArray= resultsArray.sort(function(){ return ( Math.round( Math.random() ) - 0.5 ) });
             console.log('random', randomArray);   
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            // }
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            //     console.log("word", randomNum)
-            // }
-
-            // let randomArray = function(){
-            //     let randomNum = Math.floor(Math.random() * 10);
-            //     console.log("word", randomNum)
-            // }
-            // console.log("lalala", randomArray)
 
             let answerFourContainer = $('<div>').addClass('answer answer__false-Four').append(answerFour);
             let answersContainer= $('<div>').addClass('answersContainer flex').append(randomArray);
             $('#questions').append(questionContainer, answersContainer);
-
-
-
         });
     })
 } 
@@ -151,7 +128,8 @@ app.getData = function(){
 
 app.init = function(){
     app.getData();
-    app.nameMaker();
+    app.nameMaker();  
+    
 }
 
 $(document).ready(function(){

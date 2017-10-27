@@ -1,3 +1,7 @@
+.rules__header{
+	text-align: center;
+}
+
 main {
 	background-image: url(../../assets/masonjars.jpeg);
 	background-repeat: no-repeat;
@@ -6,27 +10,43 @@ main {
 	position: relative;
 }
 
+
 .overlay {
 	position: absolute;
-	// top: 0;
-	// right: 0;
-	// left
 	height: 100%;
 	width: 100%;
 	background: rgba(113,151,91,.8);
-	// mix-blend-mode: multiply;
 }
 
-.rules {
-	// height: 100vh;
-	h1, h2 {
-		text-align: center;
-	}
-	// background: #71975b;
-
-}
 
 .main label {
 	text-transform: uppercase;	
+}
+
+.rules-left, .rules-right {
+	width:50%;
+	padding: 5%;
+	margin: 2%;
+	background: rgba(255, 205, 73, 0.6);
+}
+
+.rules-h2{
+	padding-bottom: 10px;
+}
+
+.rules-list{
+	margin: 0;
+	li{
+		margin-bottom: 15px;
+		font-size: 20px;
+		font-weight: 300;
+	}
+}
+
+.play__button{
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
