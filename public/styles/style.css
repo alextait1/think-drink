@@ -215,11 +215,19 @@ main {
 .main label {
   text-transform: uppercase; }
 
+.rules__container {
+  bottom: 5%;
+  justify-content: space-around;
+  margin: 0 auto; }
+
 .rules-left, .rules-right {
-  width: 50%;
-  padding: 5%;
-  margin: 2%;
+  width: 45%;
+  padding: 3%;
+  margin-top: 2%;
   background: rgba(255, 205, 73, 0.6); }
+
+.rules-right {
+  position: relative; }
 
 .rules-h2 {
   padding-bottom: 10px; }
