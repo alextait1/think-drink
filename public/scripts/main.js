@@ -4,50 +4,27 @@ var app = {};
 app.url = 'https://opentdb.com/api.php?';
 app.users = [];
 
-/* 
-Rules Page:
-1. Have user enter number of players
-2. Dynamically generate name input fields for that many players
-3. Have user enter the names and push these into an array of names 
-4. Have the user select the difficulty level
-5. Have the user select how many rounds they want to play, number of q's (array.length) = number of players * number of rounds
-6. Have a play game button that links to the player 0 page
-Player Page:
-1. Dynamically display the name of the player matching that index #
-2. Have them select a category
-3. Randomly generate a question
-4. Display the options in 4 cards
-5. Have user select answer
-6. On click check if user answer === true 
-7. If true, display some kind of true message dynamically display options to assign drink to another player, push a point into selected player's drinksscore array
-8. If false, display some kind of false message and store results in active player's drinkscore array
-9. Move to next player screen, repeat
-10. Play through as a many times as selected by users initially
-Results Page:
-1. Display player names and how many drinks each player consumed in drink icons
-2. Button to start again
-*/
-// Rules Page:
-// 1. Have user enter number of players
-// on change add class of selected
-// 2. Dynamically generate name input fields for that many players
-// 3. Have user enter the names and push these into an array of names 
-// 4. Have the user select the difficulty level
-// 5. Have the user select how many rounds they want to play, number of q's (array.length) = number of players * number of rounds
-// 6. Have a play game button that links to the player 0 page
-
-
-// Figure out how to get the dynamic value from the dropdown to code it into the URL
-
 app.nameMaker = function () {
     $("input[type='text']").change(function () {
         var playerName = $('.player__name').val();
+        // console.log(playerName);
         var playerNameSubmit = function playerNameSubmit() {
             $("input[type='text']").val("");
             if (app.users.indexOf(playerName) === -1) {
                 app.users.push(playerName);
-                $('.player__name-display').append('<div>\n                                <p>Player ' + (app.users.indexOf(playerName) + 1) + ' is ' + playerName + '</p>\n                            </div>');
-                console.log(playerName + ' has been added');
+                if (app.users.length <= 6) {
+
+                    $('.player__name-display').append('<div>\n                                <p class="player__name-single">Player ' + (app.users.indexOf(playerName) + 1) + ' is ' + playerName + '</p>\n                            </div>');
+                    var playerOne = app.users[0];
+                    var playerTwo = app.users[1];
+                    var playerThree = app.users[2];
+                    var playerFour = app.users[3];
+                    var playerFive = app.users[4];
+                    var playerSix = app.users[5];
+                    console.log('the players list is ', playerOne, playerTwo, playerThree, playerFour, playerFive, playerSix);
+                } else {
+                    alert('You have reached the maximum number of players');
+                }
             } else if (app.users.indexOf(playerName) > -1) {
                 alert(playerName + ' already exists');
             }
@@ -97,29 +74,10 @@ app.getData = function () {
             resultsArray.push(answerOne, answerTwo, answerThree, answerFour);
             console.log("MY ARRAY", resultsArray);
 
-            // numUsed = [];
-            // resultsRandom = [];
-            // addAnswer = false;
-
             var randomArray = resultsArray.sort(function () {
                 return Math.round(Math.random()) - 0.5;
             });
             console.log('random', randomArray);
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            // }
-
-            // for (let i = 0; i <= resultsArray.length; i++){
-            //     let randomNum = Math.floor(Math.random() * resultsArray.length);
-            //     console.log("word", randomNum)
-            // }
-
-            // let randomArray = function(){
-            //     let randomNum = Math.floor(Math.random() * 10);
-            //     console.log("word", randomNum)
-            // }
-            // console.log("lalala", randomArray)
 
             var answerFourContainer = $('<div>').addClass('answer answer__false-Four').append(answerFour);
             var answersContainer = $('<div>').addClass('answersContainer flex').append(randomArray);
@@ -152,3 +110,39 @@ $(document).ready(function () {
 });
 
 // https://opentdb.com/api.php?amount=1&category=11&difficulty=medium&type=multiple
+
+
+/* 
+Rules Page:
+1. Have user enter number of players
+2. Dynamically generate name input fields for that many players
+3. Have user enter the names and push these into an array of names 
+4. Have the user select the difficulty level
+5. Have the user select how many rounds they want to play, number of q's (array.length) = number of players * number of rounds
+6. Have a play game button that links to the player 0 page
+Player Page:
+1. Dynamically display the name of the player matching that index #
+2. Have them select a category
+3. Randomly generate a question
+4. Display the options in 4 cards
+5. Have user select answer
+6. On click check if user answer === true 
+7. If true, display some kind of true message dynamically display options to assign drink to another player, push a point into selected player's drinksscore array
+8. If false, display some kind of false message and store results in active player's drinkscore array
+9. Move to next player screen, repeat
+10. Play through as a many times as selected by users initially
+Results Page:
+1. Display player names and how many drinks each player consumed in drink icons
+2. Button to start again
+*/
+// Rules Page:
+// 1. Have user enter number of players
+// on change add class of selected
+// 2. Dynamically generate name input fields for that many players
+// 3. Have user enter the names and push these into an array of names 
+// 4. Have the user select the difficulty level
+// 5. Have the user select how many rounds they want to play, number of q's (array.length) = number of players * number of rounds
+// 6. Have a play game button that links to the player 0 page
+
+
+// Figure out how to get the dynamic value from the dropdown to code it into the URL

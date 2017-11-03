@@ -7,45 +7,52 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600" rel="stylesheet">
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
-<body>
+<body class="rules__body">
 	<main>
 		<div class="overlay">
 			<div class="wrapper">
-				<section class="rules">
+				<header class="rules__header">
 					<h1>Think Drink</h1>
-					<h2>Game rules</h2>
-					<ol>
-						<li>Answer Question</li>
-						<li>Drink</li>
-						<li>Assign Drink</li>
-						<li>Next Player</li>	
-					</ol>
-					<a href="#main"><button>Next</button></a>
-				</section>
-				<section class="setup">
-					<section id="main" class="main">
-						<label for="player__name">Enter Player Name</label>
-						<input type="text" name="player__name" placeholder="" class="player__name">
-						<button class="player__name-new">Enter Next Player</button>
+				</header>
+				<div class="rules__container flex">
+					<section class="rules-left">
+						<h2 class="rules-h2">Game rules</h2>
+						<ol class="rules-list">
+							<li>On each player's turn they will choose a trivia category and level of difficulty and a multiple choice question will appear for them to answer.</li>
+							<li>If the player answers correctly, they can assign a drink to another player of their choosing.</li>
+							<li>If the play answers incorrectly, they take a drink themseleves.</li>
+							<li>The player with the most drinks (points) wins!</li>	
+						</ol>
+						<!-- <a href="#main"><button>Next</button></a> -->
 					</section>
-					<section class="player__name-display">
-						<!-- dynmaic content goes here -->
+					<section class="rules-right">
+						<h2 class="rules-h2">Game Setup</h2>
+						<section id="main" class="main">
+							<label for="player__name">Enter Player Name</label>
+							<input type="text" name="player__name" placeholder="" class="player__name">
+							<button class="player__name-new">Enter Next Player</button>
+						</section>
+						<section class="player__name-display">
+							<!-- dynmaic content goes here -->
+						</section>
+						<label for="rounds">Choose how many rounds you would like to play</label>
+						<select name="rounds" id="rounds">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+						<a href="game.html"><button class="play__button">Play Game</button></a>
 					</section>
-					<select name="rounds" id="rounds">
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
-					</select>
-				</section>
+				</div>
 
-				<a href="game.html"><button class="play__button">Play Game</button></a>
 			</div>
+			
 
-			<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-			<script src="public/scripts/main.js"></script>
 		</div>
 	</main>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="public/scripts/main.js"></script>
 </body>
 </html>
