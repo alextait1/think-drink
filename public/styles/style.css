@@ -245,8 +245,10 @@ main {
   left: 50%;
   transform: translateX(-50%); }
 
-.player__selections wrapper {
-  height: 100vh; }
+.player__selections {
+  height: 100vh;
+  background: black;
+  color: white; }
 
 .player__question-container {
   background: red;
