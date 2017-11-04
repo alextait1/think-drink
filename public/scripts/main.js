@@ -38,6 +38,13 @@ app.nameMaker = function () {
     });
 };
 
+app.startGame = function () {
+    $('.play__button').on('click', function () {
+        alert(app.users[0]);
+        $('.player__selections-name').append('<h2>app.users[0]</h2>');
+    });
+};
+
 app.getData = function () {
     var players = [];
 
@@ -103,6 +110,7 @@ app.getData = function () {
 app.init = function () {
     app.getData();
     app.nameMaker();
+    app.startGame();
 };
 
 $(document).ready(function () {
@@ -146,3 +154,7 @@ Results Page:
 
 
 // Figure out how to get the dynamic value from the dropdown to code it into the URL
+
+
+// on submit, grab the player names and create a heading on the game page to display it
+// on click of next player button,
